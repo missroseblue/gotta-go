@@ -16,10 +16,11 @@ const typeDefs = gql`
 
   type Post {
     _id: ID
-    user: User
+    username: String
     rating: Int
-    restroom: Restroom
+    restroom: String
     postText: String
+    createdAt: String
   }
 
   type User {
@@ -30,12 +31,12 @@ const typeDefs = gql`
   }
 
   type Query {
-      users: [User]
-      user(_id: ID!): User
-      restrooms(lat: Float, long: Float): [Restroom]
-      restroom(restroomId: String!): Restroom
-      posts(userId: ID): [Post]
-      post(_id: ID!): Post
+    users: [User]
+    user(_id: ID!): User
+    restrooms(lat: Float, long: Float): [Restroom]
+    restroom(restroomId: String!): Restroom
+    posts(userId: ID): [Post]
+    post(_id: ID!): Post
   }
 `;
 
