@@ -36,11 +36,11 @@ const restroomSchema = new Schema({
     required: true,
   },
   lat: {
-    type: Float32Array,
+    type: Number,
     required: true,
   },
   long: {
-    type: Float32Array,
+    type: Number,
     required: true,
   },
 });
