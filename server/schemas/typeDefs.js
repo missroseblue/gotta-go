@@ -35,7 +35,7 @@ const typeDefs = gql`
     user(_id: ID!): User
     restrooms(lat: Float, long: Float): [Restroom]
     restroom(restroomId: String!): Restroom
-    posts(userId: ID): [Post]
+    posts(username: String): [Post]
     post(_id: ID!): Post
   }
 `;
