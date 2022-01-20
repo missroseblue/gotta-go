@@ -2,7 +2,7 @@
   "name": "gotta-go",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server/server.js",
   "dependencies": {
     "ansi-regex": "^5.0.1",
     "ansi-styles": "^4.3.0",
