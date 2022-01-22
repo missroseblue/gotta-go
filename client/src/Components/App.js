@@ -21,10 +21,11 @@ function Main() {
   return (
 
     <section>
-      <form>
-        <label for="zip">Zip Code</label>
-        <input type="number" id="zip-code" name="zip-code"></input>
-      </form>
+      <img 
+        src={goldtoiletpaper} 
+        alt="gold toilet paper hanging on a roll" /> 
+
+    
       <form action="#">
         <ul>
           <li>
@@ -50,6 +51,7 @@ function Main() {
         </ul>
         <input type="submit" value="Submit"></input>
       </form>
+
     </section>
   )
 }
