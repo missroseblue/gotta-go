@@ -1,5 +1,4 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { async } = require("rxjs");
 const { User, Post, Restroom } = require("../models");
 const { signToken } = require("../utils/auth");
 
@@ -50,22 +49,25 @@ const resolvers = {
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
-      if(!user) {
-        throw new AuthenticationError('Incorrect credentials');
+      if (!user) {
+        throw new AuthenticationError("Incorrect credentials");
       }
 
       const correctPw = await user.isCorrectPassword(password);
 
-      if(!correctPw) {
-        throw new AuthenticationError('Incorrect credentials');
+      if (!correctPw) {
+        throw new AuthenticationError("Incorrect credentials");
       }
 
       const token = signToken(user);
       return { token, user };
     },
     addPost: async (parent, args, context) => {
-      if(context.user) {
-        const post = await Post.create({ ...args, username: context.user.username });
+      if (context.user) {
+        const post = await Post.create({
+          ...args,
+          username: context.user.username,
+        });
 
         await User.findByIdAndUpdate(
           { _id: context.user._id },
@@ -76,9 +78,17 @@ const resolvers = {
         return post;
       }
 
+      throw new AuthenticationError("You need to be logged in.");
+    },
+    addRestroom: async (parent, { details }, context) => {
+      if (context.user) {
+        const restroom = await Restroom.create(details);
+        return await Restroom.find({});
+      }
+
       throw new AuthenticationError('You need to be logged in.');
-    }
-  }
+    },
+  },
 };
 
 module.exports = resolvers;
