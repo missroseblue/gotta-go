@@ -19,7 +19,6 @@ const postSchema = new Schema(
     postText: {
       type: String,
     },
-    likes: [likeSchema],
     username: {
       type: String,
       required: true,
@@ -37,10 +36,6 @@ const postSchema = new Schema(
     },
   }
 );
-
-postSchema.virtual('likeCount').get(function() {
-  return this.likes.length;
-});
 
 const Post = mongoose.model("Post", postSchema);
 
