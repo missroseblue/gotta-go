@@ -1,4 +1,40 @@
 body {
     background-color: black;
     color: white;
+} 
+
+Header {
+    display: flex;
+    justify-content: center;
+}
+
+Header {
+    font-family: Garamond, serif; 
+}
+
+.flexbox-container {
+    display: flex;
+    justify-content: center;
+}
+
+.form-flex{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.theBttn {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    background-color: goldenrod;
+    color: black
+}
+
+.foot {
+    display: flex;
+    justify-content: center;
 }

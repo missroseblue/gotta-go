@@ -3,9 +3,8 @@ import React from 'react';
 
 class SignInForm extends Component {
  
-    submit(event) {
-        event.preventDefault();
-    }
+    
+    
 
     render() {
         return (

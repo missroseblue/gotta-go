@@ -1,10 +1,13 @@
 import React from 'react';
 import './App.css';
-import goldtoiletpaper from "../goldtoiletpaper.png";
-// import RestroomList from './Restrooms/RestroomList';
-// import UserProfile from './User/UserProfile';
+import goldtoiletpaper from "./../images/goldtoiletpaper.png";
+
+// import Header from "./Header/header.js"
+// import Main from "./Main/main.js"
+// import Forms from "../Components/Forms"
 // import SignInForm from './Forms/SignInForm';
 // import SignUpForm from './Forms/SignUpForm';
+
 
 // HEADER
 function Header(props) {
@@ -16,17 +19,25 @@ function Header(props) {
   )
 }
 
+
 // MAIN
 function Main() {
   return (
 
     <section>
-      <img 
-        src={goldtoiletpaper} 
-        alt="gold toilet paper hanging on a roll" /> 
+      <div className="flexbox-container">
+        <img
+          src={goldtoiletpaper}
+          alt="gold toilet paper hanging on a roll" />
+      </div>
 
-    
-      <form action="#">
+      <div>
+        <form>
+          
+        </form>
+      </div>
+
+      <form action="#" class="form-flex">
         <ul>
           <li>
             <label for="restroom">
@@ -49,18 +60,21 @@ function Main() {
             </label>
           </li>
         </ul>
-        <input type="submit" value="Submit"></input>
       </form>
-
+      <div className='theBttn'>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
+      </div>
     </section>
   )
 }
 
+
 // FOOTER
 function Footer(props) {
   return (
-    <footer>
+    <footer className="foot">
       <p>Copyright {props.year}</p>
+
     </footer>
   )
 }
