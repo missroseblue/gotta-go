@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 
 const { Schema } = mongoose;
-const likeSchema = require('./Like');
 const dateFormat = require("../utils/dateFormat");
 
 const postSchema = new Schema(
