@@ -1,16 +1,15 @@
-// import React from 'react';
+import React, { useState } from 'react';
+import Nav from "./Nav/nav.js"
 
 
-// // HEADER
-// function Header(props) {
-//     return (
+// HEADER
+function Header(props) {
+    return (
+        <header>
+            <h1>{props.name}</h1>
 
-//         <header className='headerBox'>
-//             <div>
-//                 <h1>{props.name}</h1>
-//             </div>
-//         </header>
-//     )
-// }
+        </header>
+    )
+}
 
-// export default Header;
+export default Header;
