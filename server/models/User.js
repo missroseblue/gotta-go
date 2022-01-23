@@ -4,25 +4,32 @@ const { Schema } = mongoose;
 const bcrypt = require("bcrypt");
 const Post = require("./Post");
 
-const userSchema = new Schema({
-  username: {
-    type: String,
-    required: true,
-    trim: true,
-    unique: true,
+const userSchema = new Schema(
+  {
+    username: {
+      type: String,
+      required: true,
+      trim: true,
+      unique: true,
+    },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    password: {
+      type: String,
+      required: true,
+      minlength: 5,
+    },
+    posts: [Post.schema]
   },
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-  },
-  password: {
-    type: String,
-    required: true,
-    minlength: 5,
-  },
-  posts: [Post.schema],
-});
+  {
+    toJSON: {
+      virtuals: true
+    }
+  }
+);
 
 // create password
 userSchema.pre("save", async function (next) {
@@ -38,6 +45,11 @@ userSchema.pre("save", async function (next) {
 userSchema.methods.isCorrectPassword = async function (password) {
   return await bcrypt.compare(password, this.password);
 };
+
+// virtual for number of posts
+userSchema.virtual('postCount').get(function() {
+  return this.posts.length;
+});
 
 const User = mongoose.model("User", userSchema);
 

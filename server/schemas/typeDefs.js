@@ -27,6 +27,7 @@ const typeDefs = gql`
     _id: ID
     username: String
     email: String
+    postCount: Int
     posts: [Post]
   }
 
