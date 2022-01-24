@@ -6,6 +6,7 @@ import Nav from "./components/Nav/nav.js"
 import Main from "./components/Main/main.js"
 import Footer from './components/Footer/footer';
 import LogInForm from './components/Forms/LogInForm';
+import SignUpForm from './components/Forms/SignUpForm';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Nav />
       <Main />
       <LogInForm />
+      <SignUpForm />
       <Footer year={new Date().getFullYear()} />
 
     </div>

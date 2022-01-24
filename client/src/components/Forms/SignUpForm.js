@@ -3,9 +3,9 @@ import React from 'react';
 
 function SignUpForm() {
  
-    submit(event) {
-        event.preventDefault();
-    }
+    // submit(event) {
+    //     event.preventDefault();
+    // }
         return (
             <div class="row">
                 <h1 className="signUp">Become A Member</h1>
