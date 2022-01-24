@@ -1,28 +1,12 @@
 import React from 'react';
 
 
-class SignUpForm extends Component {
- 
-    submit(event) {
-        event.preventDefault();
-    }
+function LogInForm() {
 
-    render() {
         return (
             <div class="row">
-                <h1 className="signUp">Become A Member</h1>
-                <form class="col s12" onSubmit={this.submitSignUp.bind(this)}>
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <input id="firstName" ref="firstName" type="text" class="validate" />
-                            <label htmlFor="firstName">First Name</label>
-                        </div>
-                        <div class="input-field col s6">
-                            <input id="lastName" ref="lastName" type="text" class="validate" />
-                            <label htmlFor="lastName">Last Name</label>
-                        </div>
-                    </div>
-
+                <h1 className="logIn">Log In</h1>
+                <form class="col s12" onSubmit={this.submitSignIn.bind(this)}>
                     <div class="row">
                         <div class="input-field col s12">
                             <input id="password" type="password" class="validate" />
@@ -45,13 +29,13 @@ class SignUpForm extends Component {
                             </div>
                         </div>
                     </div>
-                    <button className='btn waves-effect waves-light' type='submit' name='action'>Submit
+                    <button className='btn waves-effect waves-light' type='submit' name='action'>Sign In
                     <i class='material-icons right'>send</i>
                     </button>
                 </form>
             </div>
         );
     }
-}
 
-export default SignUpForm;
+
+export default LogInForm;
