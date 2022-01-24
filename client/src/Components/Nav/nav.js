@@ -5,9 +5,10 @@ function Nav(props) {
     return (
         <nav class='topnav'>
             <ul className='flex-row'>
+                
                 <li className="mx-2">
                     <button onClick={() => props.setCurrentPage("SignIn")}>
-                        <a>Sign In</a>
+                        Sign In
                     </button>
                 </li>
 

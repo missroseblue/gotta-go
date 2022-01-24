@@ -1,5 +1,7 @@
 import React from 'react';  
-import goldtoiletpaper from '../../images/goldtoiletpaper.png'; 
+import goldtoiletpaper from './images/goldtoiletpaper.png'; 
+import Header from "./Components/Header";
+import Footer from "./Components/Footer";
 
 
 // // MAIN
@@ -7,19 +9,21 @@ import goldtoiletpaper from '../../images/goldtoiletpaper.png';
 function Main() {
     return (
   
-      <section>
+      <section id="main-page">
         <div className="flexbox-container">
           <img
             src={goldtoiletpaper}
             alt="gold toilet paper hanging on a roll" />
         </div>
   
+        
         <div>
           <form>
   
           </form>
         </div>
-  
+
+        <div>
         <form action="#" class="form-flex">
           <ul>
             <li>
@@ -44,9 +48,12 @@ function Main() {
             </li>
           </ul>
         </form>
+        </div>
+
         <div className='theBttn'>
           <button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
         </div>
+
       </section>
     )
   }

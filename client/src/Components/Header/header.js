@@ -1,15 +1,19 @@
-import React, { useState } from 'react';
-import Nav from "./Nav/nav.js"
+import React from 'react';
+import Nav from "./Nav";
 
 
 // HEADER
 function Header(props) {
     return (
         <header>
-            <h1>{props.name}</h1>
-
+            <div class="headerbox">
+                <h1>Gotta Go?</h1>
+                <div>
+                    <Nav currentPage={props.currentPage} setCurrentPage={props.setCurrentPage}></Nav>
+                </div>
+            </div>
         </header>
-    )
+    );
 }
 
 export default Header;

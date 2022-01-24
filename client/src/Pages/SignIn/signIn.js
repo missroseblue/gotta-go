@@ -1,28 +1,39 @@
 import React from 'react';
+import Header from "./../Components/Header";
+import Footer from "./../Components/Footer";
 
+function SignInForm() {
+    const [formState, setFormState ] = useState({password: '', email: ''});
+    const [errorMessage, SetErrorMessage] = useState('');
+    const {password, email } = formState;
 
-class SignUpForm extends Component {
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if(!errorMessage) {
+            setFormState({ [e.target.name]: e.target.value });
+            console.log('Form', formState);
+
+        }
+    };
+
+    const handleChange = (e) => {
+        if (e.target.name === 'email') {
+            const isValid = validateEmail (e.target.value);
+                if (!isValid) {
+                    SetErrorMessage('Invalid email.');
+                } 
+            } else {
+                    SetErrorMessage('');
+                }
+            
+            }
+        };
  
-    submit(event) {
-        event.preventDefault();
-    }
 
-    render() {
         return (
             <div class="row">
-                <h1 className="signUp">Become A Member</h1>
-                <form class="col s12" onSubmit={this.submitSignUp.bind(this)}>
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <input id="firstName" ref="firstName" type="text" class="validate" />
-                            <label htmlFor="firstName">First Name</label>
-                        </div>
-                        <div class="input-field col s6">
-                            <input id="lastName" ref="lastName" type="text" class="validate" />
-                            <label htmlFor="lastName">Last Name</label>
-                        </div>
-                    </div>
-
+                <h1 className="signIn">Sign In</h1>
+                <form class="col s12" onSubmit={this.submitSignIn.bind(this)}>
                     <div class="row">
                         <div class="input-field col s12">
                             <input id="password" type="password" class="validate" />
@@ -45,13 +56,13 @@ class SignUpForm extends Component {
                             </div>
                         </div>
                     </div>
-                    <button className='btn waves-effect waves-light' type='submit' name='action'>Submit
+                    <button className='btn waves-effect waves-light' type='submit' name='action'>Sign In
                     <i class='material-icons right'>send</i>
                     </button>
                 </form>
             </div>
         );
-    }
-}
+    
 
-export default SignUpForm;
+
+export default SignInForm;
