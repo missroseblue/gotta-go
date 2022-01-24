@@ -12,6 +12,11 @@ Header {
     font-family: Garamond, serif; 
 }
 
+h1 {
+    color: white;
+    font-family: Garamond, serif;
+}
+
 .flexbox-container {
     display: flex;
     justify-content: center;
