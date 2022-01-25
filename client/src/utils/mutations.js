@@ -1,4 +1,17 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
+
+export const ADD_USER = gql`
+  mutation createUser($username: String!, $email: String!, $password: String!) {
+    addUser(username: $username, email: $email, password: $password) {
+      token
+      user {
+        _id
+        username
+        email
+      }
+    }
+  }
+`;
 
 export const LOGIN_USER = gql`
   mutation login($email: String!, $password: String!) {
@@ -7,34 +20,44 @@ export const LOGIN_USER = gql`
       user {
         _id
         username
+        email
       }
     }
   }
 `;
 
-export const ADD_USER = gql`
-  mutation addUser($username: String!, $email: String!, $password: String!) {
-    addUser(username: $username, email: $email, password: $password) {
-      token
-      user {
-        _id
-        username
-      }
-    }
-  }
-`;
+// export const ADD_COMMENT = gql`
+//   mutation addComment($commentText: String!) {
+//     addComment(commentText: $commentText) {
+//       _id
+//       commentText
+//       createdAt
+//       username
+//       reactionCount
+//       reactions {
+//         _id
+//       }
+//     }
+//   }
+// `;
 
-export const ADD_COMMENT = gql`
-  mutation addComment($commentText: String!) {
-    addComment(commentText: $commentText) {
+export const ADD_POST = gql`
+  mutation createPost($rating: Int!, $restroom: String!, $postText: String!) {
+    addPost(rating: $rating, restroom: $restroom, postText: $postText) {
       _id
-      commentText
-      createdAt
+      rating
+      restroom
+      postText
       username
-      reactionCount
-      reactions {
-        _id
-      }
+    }
+  }
+`;
+
+export const ADD_RESTROOM = gql`
+  mutation addRestroom($details: RestroomDetails!) {
+    addRestroom(details: $details) {
+      restroomId
+      name
     }
   }
 `;
