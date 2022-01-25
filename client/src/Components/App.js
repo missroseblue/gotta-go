@@ -5,7 +5,7 @@ import Header from "./Header/header.js"
 import Nav from "./Nav/nav.js"
 
 //import Intro from "./Intro/intro.js"
-// import Main from "./Main/main.js"
+import Main from "./Main/main.js"
 // import Forms from "../Components/Forms"
 // import SignInForm from './Forms/SignInForm';
 // import SignUpForm from './Forms/SignUpForm';
