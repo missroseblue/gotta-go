@@ -12,11 +12,11 @@ function SignUpForm() {
                 <form className="col s12" >
                     <div className="row">
                         <div className="input-field col s6">
-                            <input id="firstName" ref="firstName" type="text" className="validate" />
+                            <input id="firstName"  type="text" className="validate" />
                             <label htmlFor="firstName">First Name</label>
                         </div>
                         <div className="input-field col s6">
-                            <input id="lastName" ref="lastName" type="text" className="validate" />
+                            <input id="lastName"  type="text" className="validate" />
                             <label htmlFor="lastName">Last Name</label>
                         </div>
                     </div>
@@ -29,7 +29,7 @@ function SignUpForm() {
                     </div>
                     <div className="row">
                         <div className="input-field col s12">
-                            <input id="email" ref="email" type="email" className="validate" />
+                            <input id="email"  type="email" className="validate" />
                             <label htmlFor="email">Email</label>
                         </div>
                     </div>

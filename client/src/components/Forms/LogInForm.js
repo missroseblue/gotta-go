@@ -2,7 +2,7 @@ import React from 'react';
 
 
 function LogInForm() {
-
+    //this.email = React.createRef();
         return (
             <div className="row">
                 <h1 className="logIn">Log In</h1>
@@ -15,7 +15,7 @@ function LogInForm() {
                     </div>
                     <div className="row">
                         <div className="input-field col s12">
-                            <input id="email" ref="email" type="email" className="validate" />
+                            <input id="email"  type="email" className="validate" />
                             <label htmlFor="email">Email</label>
                         </div>
                     </div>
