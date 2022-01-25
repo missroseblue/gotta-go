@@ -23,34 +23,34 @@ function Main() {
         <form action="#" className="form-flex">
           <ul>
             <li>
-              <label htmlFor="restroom">
-                <input type="checkbox" id="restroom" name="restroom" value="standard" />
+              <label htmlFor="men">
+                <input type="checkbox" id="men" name="men" value="men" />
                 <span>Men's Restroom</span>
               </label>
             </li>
             <li>
-              <label htmlFor="restroom2">
-                <input type="checkbox" id="restroom" name="restroom" value="standard" />
+              <label htmlFor="women">
+                <input type="checkbox" id="women" name="women" value="women" />
                 <span>Women's Restroom</span>
               </label>
             </li>
   
             <li>
-              <label htmlFor="restroom3">
-                <input type="checkbox" id="restroom2" name="restroom2" value="family" />
+              <label htmlFor="family">
+                <input type="checkbox" id="family" name="family" value="family" />
                 <span>Family Restrooms</span>
               </label>
             </li>
   
             <li>
-              <label htmlFor="restroom4">
-                <input type="checkbox" id="restroom3" name="restroom3" value="unisex" />
+              <label htmlFor="unisex">
+                <input type="checkbox" id="unisex" name="unisex" value="unisex" />
                 <span>Gender Neutral</span>
               </label>
             </li>
             <li>
-              <label htmlFor="restroom6">
-                <input type="checkbox" id="restroom3" name="restroom3" value="unisex" />
+              <label htmlFor="adacomp">
+                <input type="checkbox" id="adacomp" name="adacomp" value="unisex" />
                 <span>ADA Compliant</span>
               </label>
             </li>
