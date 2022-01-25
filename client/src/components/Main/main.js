@@ -22,9 +22,16 @@ function Main() {
     });
   };
 
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(formState);
+    
+    try {
+      // fetch data from refuge restrooms API
+      const data = await (await fetch(`https://www.refugerestrooms.org/api/v1/restrooms?ada=${formState.adacomp}&unisex=${formState.unisex}`)).json();
+      console.log(data);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
