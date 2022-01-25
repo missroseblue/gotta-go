@@ -3,22 +3,16 @@ import React from 'react';
 
 function Nav(props) {
     return (
-        <nav class='topnav'>
-            <ul className='flex-row'>
-                <li className="mx-2">
-                    <button onClick={() => props.setCurrentPage("SignIn")}>
-                        <a>Sign In</a>
-                    </button>
-                </li>
-
-                <li className='mx-2'>
-                    <button onClick={() => props.setCurrentPage ("SignUp")}>
-                        Sign Up
-                    </button>
-                </li>
-
-            </ul>
+        <nav>
+            <a href="#home"> Home</a>
+          <br />
+          <br />
+          <a href="#signup"> Sign Up</a>
+          <br />
+          <br />
+          <a href="#login">Log In</a>
         </nav>
+    
 
     )
 }

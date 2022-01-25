@@ -12,6 +12,11 @@ Header {
     font-family: Garamond, serif; 
 }
 
+Nav {
+    display: flex;
+    justify-content: center;
+}
+
 .flexbox-container {
     display: flex;
     justify-content: center;
@@ -34,7 +39,13 @@ Header {
     color: black
 }
 
-.foot {
+footer {
     display: flex;
     justify-content: center;
 }
+
+ul{
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margins */
+  }

@@ -1,14 +1,13 @@
-// import React from 'react';
+import React from 'react';
 
-
-// // FOOTER
-// function Footer(props) {
-//     return (
-//       <footer>
-//         <p>Copyright {props.year}</p>
+// FOOTER
+function Footer(props) {
+    return (
+      <footer>
+        <p>Copyright {props.year}</p>
         
-//       </footer>
-//     )
-//   }
+      </footer>
+    )
+  }
   
-//   export default Footer;
+  export default Footer;

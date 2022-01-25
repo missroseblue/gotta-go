@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Nav from "../Nav/nav";
 
-
 // HEADER
 function Header(props) {
     return (
