@@ -6,6 +6,8 @@ const { typeDefs, resolvers } = require("./schemas");
 const { authMiddleware } = require('./utils/auth');
 const db = require("./config/connection");
 
+require('dotenv').config();
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 const PORT = process.env.PORT || 3001;
 const app = express();
 
@@ -30,6 +32,29 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../client/build")));
 }
+
+app.get('/api/search', async (req, res) => {
+  try {
+    const searchString = `q=${req.query.q}`;
+
+    // use node-fetch to call the open weather api, and reads the key from .env
+    const response = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?zip=91741&appid=${process.env.OPENWEATHER_API_KEY}`,
+    );
+
+    const { coord } = await response.json();
+
+    return res.json({
+      success: true,
+      coord,
+    });
+  } catch (err) {
+    return res.status(500).json({
+      success: false,
+      message: err.message,
+    });
+  }
+});
 
 // app.get("*", (req, res) => {
 //   res.sendFile(path.join(__dirname, "../client/build/index.html"));
