@@ -20,36 +20,36 @@ function Main() {
           </form>
         </div>
   
-        <form action="#" class="form-flex">
+        <form action="#" className="form-flex">
           <ul>
             <li>
-              <label for="restroom">
+              <label htmlFor="restroom">
                 <input type="checkbox" id="restroom" name="restroom" value="standard" />
                 <span>Men's Restroom</span>
               </label>
             </li>
             <li>
-              <label for="restroom2">
+              <label htmlFor="restroom2">
                 <input type="checkbox" id="restroom" name="restroom" value="standard" />
                 <span>Women's Restroom</span>
               </label>
             </li>
   
             <li>
-              <label for="restroom3">
+              <label htmlFor="restroom3">
                 <input type="checkbox" id="restroom2" name="restroom2" value="family" />
                 <span>Family Restrooms</span>
               </label>
             </li>
   
             <li>
-              <label for="restroom4">
+              <label htmlFor="restroom4">
                 <input type="checkbox" id="restroom3" name="restroom3" value="unisex" />
                 <span>Gender Neutral</span>
               </label>
             </li>
             <li>
-              <label for="restroom6">
+              <label htmlFor="restroom6">
                 <input type="checkbox" id="restroom3" name="restroom3" value="unisex" />
                 <span>ADA Compliant</span>
               </label>
@@ -57,7 +57,7 @@ function Main() {
           </ul>
         </form>
         <div className='theBttn'>
-          <button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
+          <button className="btn waves-effect waves-light" type="submit" name="action">Submit</button>
         </div>
       </section>
     )

@@ -8,7 +8,8 @@ function Nav(props) {
           <br />
           <br />
           <a href="#signup"> Sign Up</a>
-          <br /><br />
+          <br />
+          <br />
           <a href="#login">Log In</a>
         </nav>
     
