@@ -132,6 +132,9 @@ function Main() {
       ) : (
         <section>
           <div className="center">
+            {restroomResults === 'loading' ? (
+              <div>Finding restrooms...</div>
+            ) : null}
             <button className="btn" onClick={() => backToSearch()}>
               Back to Search
             </button>
