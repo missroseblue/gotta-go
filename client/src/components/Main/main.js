@@ -5,9 +5,8 @@ import goldtoiletpaper from "../../images/backgroundv3.jpg";
 
 function Main() {
   const [formState, setFormState] = useState({
-    men: false,
-    women: false,
-    family: false,
+    zip: '',
+    changingTable: false,
     unisex: false,
     adacomp: false,
   });
@@ -16,19 +15,37 @@ function Main() {
   const handleChange = (event) => {
     const { name } = event.target;
 
-    setFormState({
-      ...formState,
-      [name]: event.target.checked,
-    });
+    if (name === "zip") {
+      setFormState({
+        ...formState,
+        zip: event.target.value
+      });
+    } else {
+      setFormState({
+        ...formState,
+        [name]: event.target.checked,
+      });
+    }
   };
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    
+
     try {
       // fetch data from refuge restrooms API
-      const data = await (await fetch(`https://www.refugerestrooms.org/api/v1/restrooms?ada=${formState.adacomp}&unisex=${formState.unisex}`)).json();
+      const data = await (
+        await fetch(
+          `https://www.refugerestrooms.org/api/v1/restrooms/search?per_page=20&ada=${
+            formState.adacomp
+          }&unisex=${formState.unisex}&query=${""}`
+        )
+      ).json();
       console.log(data);
+
+      if (formState.changingTable) {
+        const restrooms = data.filter((restroom) => restroom.changing_table);
+        console.log(restrooms);
+      }
     } catch (error) {
       console.error(error);
     }
@@ -40,58 +57,33 @@ function Main() {
         <img src={goldtoiletpaper} alt="gold toilet paper hanging on a roll" />
       </div>
 
-      <div>
-        <form></form>
-      </div>
-
       <form onSubmit={handleFormSubmit}>
-        <div className="form-flex">
+        <div className="restroom-search">
+          <input
+            type="number"
+            id="zip"
+            name="zip"
+            placeholder="Enter Zip Code"
+            onChange={handleChange}
+          ></input>
           <ul>
             <li>
-              <label htmlFor="men">
+              <label htmlFor="changingTable">
                 <input
                   type="checkbox"
-                  id="men"
-                  name="men"
-                  value={formState.men}
-                  onChange={handleChange}
-                />
-                <span>Men's Restroom</span>
-              </label>
-            </li>
-            <li>
-              <label htmlFor="women">
-                <input
-                  type="checkbox"
-                  id="women"
-                  name="women"
-                  value={formState.women}
-                  onChange={handleChange}
-                />
-                <span>Women's Restroom</span>
-              </label>
-            </li>
-
-            <li>
-              <label htmlFor="family">
-                <input
-                  type="checkbox"
-                  id="family"
-                  name="family"
-                  value={formState.family}
+                  id="changingTable"
+                  name="changingTable"
                   onChange={handleChange}
                 />
                 <span>Family Restrooms</span>
               </label>
             </li>
-
             <li>
               <label htmlFor="unisex">
                 <input
                   type="checkbox"
                   id="unisex"
                   name="unisex"
-                  value={formState.unisex}
                   onChange={handleChange}
                 />
                 <span>Gender Neutral</span>
@@ -103,7 +95,6 @@ function Main() {
                   type="checkbox"
                   id="adacomp"
                   name="adacomp"
-                  value={formState.adacomp}
                   onChange={handleChange}
                 />
                 <span>ADA Compliant</span>

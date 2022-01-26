@@ -1,51 +1,67 @@
 body {
-    background-color: black;
-    color: white;
-} 
-
-Header {
-    display: flex;
-    justify-content: center;
+  background-color: black;
+  color: white;
 }
 
 Header {
-    font-family: Garamond, serif; 
+  display: flex;
+  justify-content: center;
+}
+
+Header {
+  font-family: Garamond, serif;
 }
 
 Nav {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .flexbox-container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
-.form-flex{
-    display: flex;
-    justify-content: center;
+.form-flex {
+  display: flex;
+  justify-content: center;
 }
-
-
 
 .theBttn {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .btn {
-    background-color: goldenrod;
-    color: black
+  background-color: goldenrod;
+  color: black;
 }
 
 footer {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
-ul{
-    list-style-type: none; /* Remove bullets */
-    padding: 0; /* Remove padding */
-    margin: 0; /* Remove margins */
-  }
+ul {
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+}
+
+.restroom-search {
+    text-align: center;
+}
+
+input {
+    color: rgb(241, 240, 240);
+}
+
+#zip {
+    width: 15%;
+}
+
+@media screen and (max-width: 600px) {
+    #zip {
+        width: 50%;
+    }
+}
