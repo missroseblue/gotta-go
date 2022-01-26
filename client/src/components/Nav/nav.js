@@ -1,20 +1,22 @@
 // import React, { useState } from 'react';
-import React from 'react';
+import React from "react";
+import { Link } from 'react-router-dom';
 
 function Nav(props) {
-    return (
-        <nav>
-            <a href="home"> Home</a>
-          <br />
-          <br />
-          <a href="signup"> Sign Up</a>
-          <br />
-          <br />
-          <a href="login">Log In</a>
-        </nav>
-    
-
-    )
+  return (
+    <nav>
+      <Link to="home"> Home</Link>
+      <br />
+      <br />
+      <Link to="signup"> Sign Up</Link>
+      <br />
+      <br />
+      <Link to="login">Log In</Link>
+      <br />
+      <br />
+      <Link to="/">Search</Link>
+    </nav>
+  );
 }
 
 export default Nav;

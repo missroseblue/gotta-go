@@ -30,7 +30,6 @@ function Main() {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(formState);
 
     try {
       // fetch data from refuge restrooms API
