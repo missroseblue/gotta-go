@@ -66,6 +66,18 @@ input {
     width: 15%;
 }
 
+.card {
+  border: goldenrod solid 2px;
+  border-radius: 10px;
+  background-color: black;
+  padding: 20px;
+  margin: 20px;
+}
+
+.card-title {
+  font-size: large;
+}
+
 @media screen and (max-width: 600px) {
     #query {
         width: 50%;

@@ -130,12 +130,14 @@ function Main() {
           </div>
         </form>
       ) : (
-        <>
-          <button className="btn" onClick={() => backToSearch()}>
-            Back to Search
-          </button>
+        <section>
+          <div className="center">
+            <button className="btn" onClick={() => backToSearch()}>
+              Back to Search
+            </button>
+          </div>
           <Results restrooms={restroomResults} />
-        </>
+        </section>
       )}
     </section>
   );
