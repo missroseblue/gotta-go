@@ -56,12 +56,12 @@ input {
     color: rgb(241, 240, 240);
 }
 
-#zip {
+#query {
     width: 15%;
 }
 
 @media screen and (max-width: 600px) {
-    #zip {
+    #query {
         width: 50%;
     }
 }

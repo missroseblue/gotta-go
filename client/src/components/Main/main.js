@@ -5,7 +5,7 @@ import goldtoiletpaper from "../../images/backgroundv3.jpg";
 
 function Main() {
   const [formState, setFormState] = useState({
-    zip: '',
+    query: '',
     changingTable: false,
     unisex: false,
     adacomp: false,
@@ -15,10 +15,10 @@ function Main() {
   const handleChange = (event) => {
     const { name } = event.target;
 
-    if (name === "zip") {
+    if (name === "query") {
       setFormState({
         ...formState,
-        zip: event.target.value
+        query: event.target.value,
       });
     } else {
       setFormState({
@@ -30,6 +30,7 @@ function Main() {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
+    console.log(formState);
 
     try {
       // fetch data from refuge restrooms API
@@ -37,7 +38,7 @@ function Main() {
         await fetch(
           `https://www.refugerestrooms.org/api/v1/restrooms/search?per_page=20&ada=${
             formState.adacomp
-          }&unisex=${formState.unisex}&query=${""}`
+          }&unisex=${formState.unisex}&query=${formState.query}`
         )
       ).json();
       console.log(data);
@@ -60,10 +61,10 @@ function Main() {
       <form onSubmit={handleFormSubmit}>
         <div className="restroom-search">
           <input
-            type="number"
-            id="zip"
-            name="zip"
-            placeholder="Enter Zip Code"
+            type="text"
+            id="query"
+            name="query"
+            placeholder="Search for a restroom"
             onChange={handleChange}
           ></input>
           <ul>

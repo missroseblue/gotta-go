@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const { ApolloServer } = require("apollo-server-express");
 const path = require("path");
@@ -6,7 +7,6 @@ const { typeDefs, resolvers } = require("./schemas");
 const { authMiddleware } = require('./utils/auth');
 const db = require("./config/connection");
 
-require('dotenv').config();
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -35,14 +35,15 @@ if (process.env.NODE_ENV === "production") {
 
 app.get('/api/search', async (req, res) => {
   try {
-    const searchString = `q=${req.query.q}`;
+    const zip = `${req.query.zip}`;
 
     // use node-fetch to call the open weather api, and reads the key from .env
     const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?zip=91741&appid=${process.env.OPENWEATHER_API_KEY}`,
+      `https://api.openweathermap.org/data/2.5/weather?zip=${zip}&appid=${process.env.OPENWEATHER_API_KEY}`,
     );
 
     const { coord } = await response.json();
+    console.log(coord);
 
     return res.json({
       success: true,
