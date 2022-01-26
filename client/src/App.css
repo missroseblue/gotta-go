@@ -52,6 +52,12 @@ ul {
     text-align: center;
 }
 
+.no-match {
+    font-size: 2.5em;
+    text-align: center;
+    padding: 5%;
+}
+
 input {
     color: rgb(241, 240, 240);
 }

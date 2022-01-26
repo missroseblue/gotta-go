@@ -16,6 +16,7 @@ import Main from "./components/Main/main.js";
 import Footer from "./components/Footer/footer";
 import LogInForm from "./components/Forms/LogInForm";
 import SignUpForm from "./components/Forms/SignUpForm";
+import NoMatch from './pages/NoMatch';
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -46,7 +47,9 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Main />} />
             <Route exact path="/login" element={<LogInForm />} />
-            <Route exact path='/signup' element={<SignUpForm />} />
+            <Route exact path="/signup" element={<SignUpForm />} />
+
+            <Route path="*" element={<NoMatch />} />
           </Routes>
           <Footer year={new Date().getFullYear()} />
         </div>
