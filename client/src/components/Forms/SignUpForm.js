@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { useMutation } from "@apollo/client";
+import { ADD_USER } from '../../utils/mutations';
+import Auth from '../../utils/auth';
 
 function SignUpForm() {
   const [formState, setFormState] = useState({
@@ -7,18 +10,31 @@ function SignUpForm() {
     password: "",
   });
 
+  const [addUser, { error }] = useMutation(ADD_USER);
+
   // update state based on form input changes
   const handleChange = (event) => {
-    const { id } = event.target;
+    const { id, value } = event.target;
 
     setFormState({
         ...formState,
-        [id]: event.target.value,
+        [id]: value,
     });
   };
 
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
+
+    try {
+        // execute addUser mutation with form data
+        const { data } = await addUser({
+            variables: { ...formState }
+        });
+
+        Auth.login(data.addUser.token);
+    } catch (error) {
+        console.error(error);
+    }
   };
 
   return (
