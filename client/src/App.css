@@ -14,7 +14,10 @@ Header {
 
 Nav {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  background-color: black;
+  font-size: large;
+  font-weight: bold;
 }
 
 .flexbox-container {
@@ -64,6 +67,10 @@ input {
 
 #query {
     width: 15%;
+}
+
+.loading {
+  cursor: progress;
 }
 
 .card {
