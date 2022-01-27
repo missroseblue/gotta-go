@@ -1,5 +1,4 @@
-# GOtta Go?
-<h1 align="center"> Gotta Go? 🧻</h1>
+# <h1 align="center"> Gotta Go? 🧻</h1>
   
   
 <p align="center">
