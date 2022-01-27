@@ -65,11 +65,11 @@ Gotta Go?” is a social media platform that allows users to search for a public
 ✏️ No current testing
 
 ## Contributions
-Gigi Morris
-Kyrsten Urbayan
-Hugo Samayoa
-Nic Wille
-Sandra Caceres
+* Gigi Morris
+* Kyrsten Urbayan
+* Hugo Samayoa
+* Nic Wille
+* Sandra Caceres
 
 
 
