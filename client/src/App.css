@@ -69,6 +69,10 @@ input {
     width: 15%;
 }
 
+.loading {
+  cursor: progress;
+}
+
 .card {
   border: goldenrod solid 2px;
   border-radius: 10px;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import goldtoiletpaper from "../../images/backgroundv3.jpg";
 import Results from "../../pages/Results";
 
@@ -15,6 +15,8 @@ function Main() {
   const [searchState, setSearchState] = useState(false);
 
   const [restroomResults, setRestroomResults] = useState();
+
+  const [isLoading, setIsLoading] = useState(false);
 
   // update state based on form input changes
   const handleChange = (event) => {
@@ -37,14 +39,14 @@ function Main() {
     event.preventDefault();
 
     try {
+      setIsLoading(true);
+
       // fetch data from refuge restrooms API
       const data = await (
         await fetch(
-          `https://www.refugerestrooms.org/api/v1/restrooms/search?per_page=20&ada=${formState.adacomp}&unisex=${formState.unisex}&query=${formState.query}`
+          `https://www.refugerestrooms.org/api/v1/restrooms/search?per_page=40&ada=${formState.adacomp}&unisex=${formState.unisex}&query=${formState.query}`
         )
       ).json();
-
-      setRestroomResults("loading");
 
       if (formState.changingTable) {
         const restrooms = data.filter((restroom) => restroom.changing_table);
@@ -53,6 +55,7 @@ function Main() {
         setRestroomResults(data);
       }
 
+      setIsLoading(false);
       setSearchState(true);
     } catch (error) {
       console.error(error);
@@ -66,75 +69,78 @@ function Main() {
       unisex: false,
       adacomp: false,
     });
+    setIsLoading(false);
     setSearchState(false);
     setRestroomResults(null);
   };
 
   return (
-    <section>
+    <section className={isLoading ? 'loading' : ''}>
       <div className="flexbox-container">
         <img src={goldtoiletpaper} alt="gold toilet paper hanging on a roll" />
       </div>
 
       {!searchState ? (
-        <form onSubmit={handleFormSubmit}>
-          <div className="restroom-search">
-            <input
-              type="text"
-              id="query"
-              name="query"
-              placeholder="Search for a restroom"
-              onChange={handleChange}
-            ></input>
-            <ul>
-              <li>
-                <label htmlFor="changingTable">
-                  <input
-                    type="checkbox"
-                    id="changingTable"
-                    name="changingTable"
-                    onChange={handleChange}
-                  />
-                  <span>Family Restrooms</span>
-                </label>
-              </li>
-              <li>
-                <label htmlFor="unisex">
-                  <input
-                    type="checkbox"
-                    id="unisex"
-                    name="unisex"
-                    onChange={handleChange}
-                  />
-                  <span>Gender Neutral</span>
-                </label>
-              </li>
-              <li>
-                <label htmlFor="adacomp">
-                  <input
-                    type="checkbox"
-                    id="adacomp"
-                    name="adacomp"
-                    onChange={handleChange}
-                  />
-                  <span>ADA Compliant</span>
-                </label>
-              </li>
-            </ul>
-          </div>
-
-          <div className="theBttn">
-            <button className="btn waves-effect waves-light" type="submit">
-              Submit
-            </button>
-          </div>
-        </form>
+        <div>
+          {isLoading ? (
+            <div className='no-match'>Finding restrooms...</div>
+          ) : (
+            <form onSubmit={handleFormSubmit}>
+              <div className="restroom-search">
+                <input
+                  type="text"
+                  id="query"
+                  name="query"
+                  placeholder="Search for a restroom"
+                  onChange={handleChange}
+                ></input>
+                <ul>
+                  <li>
+                    <label htmlFor="changingTable">
+                      <input
+                        type="checkbox"
+                        id="changingTable"
+                        name="changingTable"
+                        onChange={handleChange}
+                      />
+                      <span>Family Restrooms</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label htmlFor="unisex">
+                      <input
+                        type="checkbox"
+                        id="unisex"
+                        name="unisex"
+                        onChange={handleChange}
+                      />
+                      <span>Gender Neutral</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label htmlFor="adacomp">
+                      <input
+                        type="checkbox"
+                        id="adacomp"
+                        name="adacomp"
+                        onChange={handleChange}
+                      />
+                      <span>ADA Compliant</span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+              <div className="theBttn">
+                <button className="btn waves-effect waves-light" type="submit">
+                  Submit
+                </button>
+              </div>
+            </form>
+          )}
+        </div>
       ) : (
         <section>
           <div className="center">
-            {restroomResults === 'loading' ? (
-              <div>Finding restrooms...</div>
-            ) : null}
             <button className="btn" onClick={() => backToSearch()}>
               Back to Search
             </button>
