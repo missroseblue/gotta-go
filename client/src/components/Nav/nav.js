@@ -8,14 +8,16 @@ function Nav(props) {
     <nav>
       <Link to="home"> Home</Link>
 
+      <Link to="/">Search</Link>
+      
       {!Auth.loggedIn() ? (
         <>
           <Link to="signup"> Sign Up</Link>
           <Link to="login">Log In</Link>
         </>
-      ) : null}
-
-      <Link to="/">Search</Link>
+      ) : (
+        <button className="btn" onClick={() => Auth.logout()}>Logout</button>
+      )}
     </nav>
   );
 }
