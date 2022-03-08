@@ -1,9 +1,12 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 
-const SingleRestroom = ({ props }) => {
+const SingleRestroom = () => {
+    const { id: restroomId } = useParams();
+
     return (
         <div>
-            single restroom will be here
+            {restroomId}
         </div>
     );
 };

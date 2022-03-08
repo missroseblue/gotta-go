@@ -6,6 +6,7 @@ import {
   faBaby,
   faTransgenderAlt,
 } from "@fortawesome/free-solid-svg-icons";
+import SingleRestroom from "../SingleRestroom/SingleRestroom";
 
 const Restroom = ({ props }) => {
   const { id, name, street, city, state, accessible, unisex, changing_table } =

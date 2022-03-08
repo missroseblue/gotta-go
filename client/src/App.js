@@ -49,7 +49,7 @@ function App() {
             <Route exact path="/" element={<Main />} />
             <Route exact path="/login" element={<LogInForm />} />
             <Route exact path="/signup" element={<SignUpForm />} />
-            <Route exact path="/restroom/:restroomId" element={<SingleRestroom />} />
+            <Route exact path="/restroom/:id" element={<SingleRestroom />} />
 
             <Route path="*" element={<NoMatch />} />
           </Routes>
