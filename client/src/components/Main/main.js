@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import goldtoiletpaper from "../../images/backgroundv3.jpg";
 import Results from "../../pages/Results";
 

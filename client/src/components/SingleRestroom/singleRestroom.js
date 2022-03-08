@@ -1,11 +1,11 @@
 import React from 'react';
 
-const singleRestroom = () => {
+const SingleRestroom = ({ props }) => {
     return (
         <div>
-            
+            single restroom will be here
         </div>
     );
 };
 
-export default singleRestroom;
+export default SingleRestroom;

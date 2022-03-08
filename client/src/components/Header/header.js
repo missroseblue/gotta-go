@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import Nav from "../Nav/nav";
+import React from 'react';
 
 // HEADER
 function Header(props) {
