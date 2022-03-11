@@ -6,13 +6,12 @@ import {
   faBaby,
   faTransgenderAlt,
 } from "@fortawesome/free-solid-svg-icons";
-import SingleRestroom from "../SingleRestroom/SingleRestroom";
 
 const Restroom = ({ props }) => {
   const { id, name, street, city, state, accessible, unisex, changing_table } =
     props;
   return (
-    <Link to={`restroom/${id}`}>
+    <Link to={`restroom/${name}`}>
       <div className="card">
         <div className="card-title">
           {name} {accessible ? <FontAwesomeIcon icon={faWheelchair} /> : null}{" "}
