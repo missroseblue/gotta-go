@@ -6,6 +6,7 @@ import {
   faBaby,
   faTransgenderAlt,
 } from "@fortawesome/free-solid-svg-icons";
+import { formatDate } from '../../utils/formatDate';
 
 const SingleRestroom = () => {
   const { name: name } = useParams();
@@ -64,6 +65,8 @@ const SingleRestroom = () => {
                 {restroom.comment}
               </>
             ) : null}
+
+            Updated on: {formatDate(restroom.updated_at)}
           </div>
         </div>
       )}
