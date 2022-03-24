@@ -18,11 +18,10 @@ const Restroom = ({ props }) => {
           {changing_table ? <FontAwesomeIcon icon={faBaby} /> : null}{" "}
           {unisex ? <FontAwesomeIcon icon={faTransgenderAlt} /> : null}
         </div>
-        <div className="card-body">
+        <div>
           {street}
           <br />
           {city}, {state}
-          <div className="card-details"></div>
         </div>
       </div>
     </Link>

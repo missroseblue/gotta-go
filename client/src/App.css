@@ -96,6 +96,14 @@ input {
   margin-bottom: 10px;
 }
 
+.card-body {
+  font-size: 18px;
+}
+
+.card-subtitle {
+  font-weight: bold;
+}
+
 @media screen and (max-width: 600px) {
     #query {
         width: 50%;
