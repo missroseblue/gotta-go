@@ -9,12 +9,6 @@ function Nav(props) {
       {/* <Link to="home"> Home</Link>
       <br />
       <br /> */}
-      <Link to="signup"> Sign Up</Link>
-      <br />
-      <br />
-      <Link to="login">Log In</Link>
-      <br />
-      <br />
       <Link to="/">Search</Link>
       
       {!Auth.loggedIn() ? (
