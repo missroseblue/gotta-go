@@ -6,10 +6,10 @@ import {
   faBaby,
   faTransgenderAlt,
 } from "@fortawesome/free-solid-svg-icons";
-import { formatDate } from '../../utils/formatDate';
+import { formatDate } from "../../utils/formatDate";
 
 const SingleRestroom = () => {
-  const { name: name } = useParams();
+  const { name } = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const [restroom, setRestroom] = useState({});
 
@@ -58,14 +58,13 @@ const SingleRestroom = () => {
                 {restroom.directions}
               </>
             ) : null}
-            
             {restroom.comment.length > 1 ? (
               <>
                 <div className="card-subtitle">Details:</div>
                 {restroom.comment}
               </>
             ) : null}
-
+            <br />
             Updated on: {formatDate(restroom.updated_at)}
           </div>
         </div>
