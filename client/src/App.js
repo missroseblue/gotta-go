@@ -16,7 +16,7 @@ import Main from "./components/Main/main.js";
 import Footer from "./components/Footer/footer";
 import LogInForm from "./components/Forms/LogInForm";
 import SignUpForm from "./components/Forms/SignUpForm";
-import SingleRestroom from "./components/SingleRestroom/SingleRestroom";
+import SingleRestroom from "./components/SingleRestroom/singleRestroom";
 import NoMatch from './pages/NoMatch';
 
 const httpLink = createHttpLink({
