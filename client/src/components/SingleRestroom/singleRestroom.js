@@ -34,7 +34,7 @@ const SingleRestroom = () => {
   return (
     <div>
       {isLoading ? (
-        <h1>Loading...</h1>
+        <h3 align='center'>Loading...</h3>
       ) : (
         <div className="card">
           <div className="card-title">
