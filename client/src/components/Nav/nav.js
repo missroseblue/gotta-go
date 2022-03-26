@@ -1,6 +1,7 @@
 // import React, { useState } from 'react';
 import React from "react";
 import { Link } from 'react-router-dom';
+import Auth from '../../utils/auth';
 
 function Nav(props) {
   return (
@@ -15,6 +16,15 @@ function Nav(props) {
       <br />
       <br />
       <Link to="/">Search</Link>
+      
+      {!Auth.loggedIn() ? (
+        <>
+          <Link to="signup"> Sign Up</Link>
+          <Link to="login">Log In</Link>
+        </>
+      ) : (
+        <button className="btn" onClick={() => Auth.logout()}>Logout</button>
+      )}
     </nav>
   );
 }
