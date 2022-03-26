@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 function Nav(props) {
   return (
     <nav>
-      <Link to="home"> Home</Link>
+      {/* <Link to="home"> Home</Link>
       <br />
-      <br />
+      <br /> */}
       <Link to="signup"> Sign Up</Link>
       <br />
       <br />
