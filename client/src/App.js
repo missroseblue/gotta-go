@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   ApolloProvider,
   ApolloClient,
@@ -16,6 +16,7 @@ import Main from "./components/Main/main.js";
 import Footer from "./components/Footer/footer";
 import LogInForm from "./components/Forms/LogInForm";
 import SignUpForm from "./components/Forms/SignUpForm";
+import SingleRestroom from "./components/SingleRestroom/SingleRestroom";
 import NoMatch from './pages/NoMatch';
 
 const httpLink = createHttpLink({
@@ -48,6 +49,7 @@ function App() {
             <Route exact path="/" element={<Main />} />
             <Route exact path="/login" element={<LogInForm />} />
             <Route exact path="/signup" element={<SignUpForm />} />
+            <Route exact path="/restroom/:name" element={<SingleRestroom />} />
 
             <Route path="*" element={<NoMatch />} />
           </Routes>

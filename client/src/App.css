@@ -14,7 +14,10 @@ Header {
 
 Nav {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  background-color: black;
+  font-size: large;
+  font-weight: bold;
 }
 
 .flexbox-container {
@@ -66,6 +69,10 @@ input {
     width: 15%;
 }
 
+.loading {
+  cursor: progress;
+}
+
 .card {
   border: goldenrod solid 2px;
   border-radius: 10px;
@@ -73,6 +80,7 @@ input {
   padding: 20px;
   margin: 20px;
   transition: .5s;
+  color:rgb(241, 240, 240);
 }
 
 .card:hover {
@@ -86,6 +94,14 @@ input {
   border-bottom: solid rgb(165, 165, 165) 1px;
   padding-bottom: 10px;
   margin-bottom: 10px;
+}
+
+.card-body {
+  font-size: 18px;
+}
+
+.card-subtitle {
+  font-weight: bold;
 }
 
 @media screen and (max-width: 600px) {
